@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, useLocation } from "react-router-dom";
+import "./App.css";
+import Home from "./Pages/Home/Home";
+import Header from "./Components/Layout/Header/Header";
+import Post from "./Pages/Post/Post";
+import { useEffect } from "react";
+
 
 function App() {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/post/:postId" element={<Post />} />
+        <Route
+          path="*"
+          element={
+            <div style={{ padding: 20, fontSize: 24, textAlign: "center" }}>
+              404: Page Not Found
+            </div>
+          }
+        />
+      </Routes>
     </div>
   );
 }

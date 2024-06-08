@@ -1,0 +1,46 @@
+
+.skeleton {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    overflow: hidden;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  .skeleton-img{
+    width: 100%;
+    height: 200px;
+    background-color: #ccc;
+  }
+  
+  .skeleton-title {
+    height: 20px;
+    background-color: #ccc;           
+    width: 70%;
+    margin: 10px auto;
+  }
+  
+  .skeleton-body {
+    height: 100px;
+    background-color: #ddd;
+    width: 90%;
+    margin: 5px auto;
+  }
+  .skeleton-btn {
+    background-color: #ddd !important;
+  }
+  
+  .skeleton-pagination {
+    opacity: 0;
+  }
+  
+  
+@keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
