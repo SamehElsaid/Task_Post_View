@@ -24,7 +24,6 @@ function Post() {
   const { data, comments, loading, error } = useSelector((state) => state.postById);
   const refToComments = useRef(null);
   const [page, setPage] = useState(0);
-  console.log({ data, loading, error });
   useEffect(() => {
     if (postId) {
       dispatch(fetchPostById(postId));

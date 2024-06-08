@@ -3,7 +3,6 @@ import "./Comment.css";
 
 export default function Comments({ comments, setLoadingComments, refToComments, page, setPage }) {
     const pageSize = 10;
-    console.log(page)
     const handleChangePage = (page) => {
         setPage(page);
         refToComments.current.scrollIntoView();
